@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>حذف فایل‌ها</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>حذف فایل‌های PDF</h1>
+
+        <!-- فرم حذف فایل ها -->
+        <form action="/delete" method="post" onsubmit="return confirmDelete();">
+            <div class="checkbox-group">
+                {% for file in files %}
+                    <div>
+                        <input type="checkbox" name="files" value="{{ file }}"> {{ file }}
+                    </div>
+                {% endfor %}
+            </div>
+            <input type="submit" value="حذف فایل‌های انتخاب شده">
+        </form>
+
+        <!-- دکمه بازگشت به پنل مدیریت -->
+        <br>
+        <a href="/admin">بازگشت به پنل مدیریت</a>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

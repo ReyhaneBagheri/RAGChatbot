@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>پنل مدیریت</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    
+    <nav>
+        <div class="menu-items">
+            <ul class="navLinks">
+                <li class="navList active">
+                    <a href="#">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <span class="links">خانه</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="#">
+                        <ion-icon name="trash-outline"></ion-icon>
+                        <span class="links">حذف فایل</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="#">
+                        <ion-icon name="cloud-upload-outline"></ion-icon>
+                        <span class="links">آپلود فایل</span>
+                    </a>   
+                </li>
+            </ul>
+            <ul class="bottom-link">
+                <li>
+                    <a href="/index">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        <span class="links">صفحه گفتگو</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="container">        
+
+            <!-- Recent Activities -->
+            <div class="data-table activityTable">
+                <div class="title">                
+                    <ion-icon name="speedometer"></ion-icon>
+                    <span class="text">صفحه اصلی</span>
+                </div>
+                <ul>
+                {% for file in files %}
+                    
+                        
+                            <!-- لینک به فایل PDF -->
+                            <li><a href="/test/{{ file }}" >{{ file }}</a></li>
+                        
+                    
+                {% endfor %}
+                </ul>
+            </div>
+
+            
+            <!-- Content -->
+            <div style="display:none" class="data-table userDetailsTable">
+                <div class="title">
+                    <ion-icon name="trash-outline"></ion-icon>
+                    <span class="text">حذف فایل‌ها</span>
+                </div>
+                <div>           
+                    <!-- فرم حذف فایل ها -->
+                    <form action="/delete" method="post" onsubmit="return confirmDelete();">
+                        <div class="checkbox-group">
+                            {% for file in files %}
+                                <div>
+                                    <!-- چک‌باکس استاندارد برای انتخاب فایل -->
+                                    <input type="checkbox" name="files" value="{{ file }}">
+                                    <label>{{ file }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <input type="submit" value="حذف فایل‌های انتخاب شده">
+                    </form>
+                </div>
+            </div>
+
+            <!-- Analytics -->
+            <div style="display:none" class="data-table EditUserRole">
+                <div class="title">
+                    <ion-icon name="cloud-upload-outline"></ion-icon>
+                    <span class="text">آپلود فایل‌ها</span>
+                </div>
+
+                <div class = "upload">
+
+                    <form action="/upload" method="post" enctype="multipart/form-data">
+                        <label class="file-upload">
+                            انتخاب فایل
+                            <input type="file" name="file" accept=".pdf" id="fileInput" onchange="showFileName();">
+                        </label>
+                        <p id="fileName" style="margin-top: 10px; font-weight: bold; color : black ;"></p> <!-- نمایش نام فایل -->
+                        <input type="submit" class="upload-button" value="آپلود" onclick="uploadFile(); return false;">
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Downloads section -->
+            <div style="display:none" class="data-table downloads">
+                <div class="title">
+                    <ion-icon name="chatbubbles-outline"></ion-icon>
+                    <span class="text">Comments</span>
+                </div>
+                <div>
+                    <!-- Enter any table or section here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/static/script.js"></script>
+    
+    <!-- Sources for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+</body>
+</html>

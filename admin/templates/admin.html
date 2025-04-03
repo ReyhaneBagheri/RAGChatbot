@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>پنل مدیریت</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>پنل مدیریت</h1>
+
+        <!-- فرم آپلود فایل -->
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <h2>آپلود فایل PDF</h2>
+            <input type="file" name="file" accept=".pdf">
+            <input type="submit" value="آپلود">
+        </form>
+
+        <!-- فرم رفتن به صفحه حذف فایل ها -->
+        <form action="/delete" method="get">
+            <h2>حذف فایل‌های PDF</h2>
+            <input type="submit" value="رفتن به صفحه حذف">
+        </form>
+
+        <!-- دکمه خروج (بازگشت به صفحه لاگین) -->
+        <form action="/index" method="get">
+            <input type="submit" class="logout-btn" value="بازگشت به صفحه ورود">
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* استایل برای بدنه صفحات */
+body {
+    font-family: "Vazirmatn", sans-serif  ;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1, h2 {
+    color: #fff;
+    font-weight: normal;
+}
+
+form {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+input[type="file"], input[type="submit"], input[type="checkbox"] {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #388E3C;
+}
+
+.container {
+    text-align: center;
+}
+
+.logout-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.logout-btn:hover {
+    background-color: #cc0000;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
+.checkbox-group div {
+    margin-bottom: 10px;
+}
