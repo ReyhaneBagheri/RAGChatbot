@@ -1,5 +1,6 @@
 
-<span style="color:red">__RAGChatbot__</span> is an AI-powered chatbot that leverages Retrieval-Augmented Generation (RAG) to provide accurate and context-aware responses. It retrieves relevant information from external documents before generating responses, ensuring high-quality answers.
+
+__RAGChatbot__ is an AI-powered chatbot that leverages Retrieval-Augmented Generation (RAG) to provide accurate and context-aware responses. It retrieves relevant information from external documents before generating responses, ensuring high-quality answers.
 
 This project is an intelligent text-based assistant designed to help students quickly access university information, such as academic schedules and regulations. Built using a RAG-based NLP model, it provides accurate, up-to-date answers to common questions without human intervention. Evaluations show a 91% accuracy rate, demonstrating its effectiveness in improving user experience and university service efficiency.
 
@@ -52,35 +53,35 @@ __🔐 Authentication Pages__
 
 The project includes essential user authentication pages:
 
-** Login Page ** 
+__Login Page__ 
 
 ![image](https://github.com/user-attachments/assets/7dc5dc31-4dc5-4256-a841-982cb968ac11)
 
 
-** Sign-up Page ** 
+__Sign-up Page__ 
 
 ![image](https://github.com/user-attachments/assets/54859d23-dddb-44cc-895a-9a0c543a8ce5)
 
 
-** Password Recovery Page ** 
+__Password Recovery Page__ 
 
 ![image](https://github.com/user-attachments/assets/aeba554e-576d-4e93-a492-33e96b164af0)
 
-** 📂 Admin Panel for File Management** 
+__📂 Admin Panel for File Management__ 
 
 
 The system also features an Admin Panel for managing files efficiently.
 
-** View Used Files Page** 
+__View Used Files Page__ 
 
 ![image](https://github.com/user-attachments/assets/5cebb0ff-c2e7-4c0c-8715-c439320128c5)
 
 
-** Delete File from Folder Page** 
+__Delete File from Folder Page__ 
 
 ![image](https://github.com/user-attachments/assets/fd8d8851-0934-4205-95a1-03cb0309b82e)
 
-** Add File to Folder Page** 
+__Add File to Folder Page__ 
 
 ![image](https://github.com/user-attachments/assets/d1a75332-155e-41ed-9262-8501f6cabc1f)
 
