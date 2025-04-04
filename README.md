@@ -1,5 +1,5 @@
 
-__RAGChatbot__ is an AI-powered chatbot that leverages Retrieval-Augmented Generation (RAG) to provide accurate and context-aware responses. It retrieves relevant information from external documents before generating responses, ensuring high-quality answers.
+<span style="color:red">__RAGChatbot__</span> is an AI-powered chatbot that leverages Retrieval-Augmented Generation (RAG) to provide accurate and context-aware responses. It retrieves relevant information from external documents before generating responses, ensuring high-quality answers.
 
 This project is an intelligent text-based assistant designed to help students quickly access university information, such as academic schedules and regulations. Built using a RAG-based NLP model, it provides accurate, up-to-date answers to common questions without human intervention. Evaluations show a 91% accuracy rate, demonstrating its effectiveness in improving user experience and university service efficiency.
 
